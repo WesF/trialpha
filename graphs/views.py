@@ -8,8 +8,8 @@ def index(request):
     #TODO: process C2 data into some better data structure depending on
     #      what the 3 libraries want :-)
     data = C2.objects.all()
-    template = loader.get_template('polls/index.html')
+    template = loader.get_template('graphs/index.html')
     context = {
         'data': data,
     }
-    return HttpResponse("Hello, world.")
+    return HttpResponse(template.render(context, request))

@@ -32,6 +32,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+    'twitter_bootstrap',
     'graphs.apps.GraphsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
