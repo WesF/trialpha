@@ -10,3 +10,7 @@ class C2(models.Model):
     
     def __str__(self):
         return str(self.experiment_id) + '_' + str(self.milliseconds)
+        
+    def as_json(self):
+        return {'radius': self.radius, 'milliseconds': self.milliseconds,
+                'experiment_id': self.experiment_id}

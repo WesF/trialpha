@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<html>
+	<head>
+    	<img src="{% static "graphs/images/trialpha_banner.png" %}" alt="banner"/>
+    	<link href="{% static 'graphs/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    	<link href="{% static 'graphs/css/toolkit-startup.min.css' %}" rel="stylesheet" media="screen">
+  	</head>
+
+  	<body>
+  		<script src="{% static 'graphs/javascript/jquery-3.1.1.js' %}"></script>
+    	<script src="{% static 'graphs/javascript/bootstrap.min.js' %}"></script>
+    	<script src="{% static 'graphs/javascript/d3.min.js' %}"></script>
+    	{% block content %}
+    	{% endblock %}
+		
+		
+  	</body>
+</html>
