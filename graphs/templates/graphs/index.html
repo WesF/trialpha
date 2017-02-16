@@ -2,19 +2,17 @@
 {% load staticfiles %}
 {% block content %}
     <script type="text/javascript">
-        var c2_data = "{{ data }}";
-        console.log(c2_data);
+        var c2_data = {{ data|safe }};
     </script>
     <div class="block d3" id="d3">
         <script src="{% static 'graphs/javascript/c2_d3.js' %}"></script>
-        <h1>This is the D3 block</h1>
-        <div id="chart"></div>
+        <h1>D3</h1>
     </div>
     <div class="block highcharts" id="highcharts">
-        <h1>This is the HighCharts block</h1>
+        <h1>HighCharts</h1>
     </div>
     <div class="block bokeh" id="bokeh">
-        <h1>This is the Bokeh block</h1>
+        <h1>Bokeh</h1>
     </div>
 {% endblock %}
 

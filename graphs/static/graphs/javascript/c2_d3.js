@@ -1,41 +1,52 @@
 $(function() {
-    console.log('jquery is working!');
+    console.log('jquery is bullshit!');
     createGraph();
 });
 
-// function createGraph() {
-//     var width = 960; // chart width
-//     var height = 700; // chart height
-//     var format = d3.format(",d");  // convert value to integer
-//     var color = d3.schemeCategory20();  // create ordinal scale with 20 colors
-//     var sizeOfRadius = d3.scale.pow().domain([-100,100]).range([-50,50]);  // https://github.com/mbostock/d3/wiki/Quantitative-Scales#pow
-//     var bubble = d3.layout.pack()
-//     .sort(null)  // disable sorting, use DOM tree traversal
-//     .size([width, height])  // chart layout size
-//     .padding(1)  // padding between circles
-//     .radius(function(d) { return 20 + (sizeOfRadius(d) * 30); });  // radius for each circle
+function createGraph() {
+    console.log(c2_data)
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+    var valueline = d3.line()
+        .x(function(d) { return x(d['x']); })
+        .y(function(d) { return x(d['y']); });
     
-//     var svg = d3.select("#chart").append("svg")
-//     .attr("width", width)
-//     .attr("height", height)
-//     .attr("class", "bubble");
     
-//     d3.json("/data", function(error, quotes) {
-//         var node = svg.selectAll('.node')
-//             .data(bubble.nodes(quotes)
-//             .filter(function(d) { return !d.children; }))
-//             .enter().append('g')
-//             .attr('class', 'node')
-//             .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'});
+    var canvas = d3.select("#d3").append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .attr("border", "black")
+            .attr("display", "block")
+            .attr("margin", "auto")
     
-//         node.append('circle')
-//             .attr('r', function(d) { return d.r; })
-//             .style('fill', function(d) { return color(d.symbol); });
+    console.log(valueline)
+    // loop through the series json and apply valueline
+    for (var key in c2_data) {
+        var objects = c2_data[key];
+        console.log(objects)
+        x.domain(d3.extent(objects, function(d) { return d['x']; }));
+        y.domain([0, d3.max(objects, function(d) {
+            return Math.max(d['x'], d['y']); })]);
+        console.log(valueline.apply(null, [objects]))
+        canvas.append("path")
+        .data([objects])
+        .attr("class", "line")
+        .attr("d", valueline);
     
-//         node.append('text')
-//             .attr("dy", ".3em")
-//             .style('text-anchor', 'middle')
-//             .text(function(d) { return d.symbol; });
-//     });
-// }
+    };
+
+    canvas.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // Add the Y Axis
+    canvas.append("g")
+        .call(d3.axisLeft(y));
+
+    
+};
+
 
