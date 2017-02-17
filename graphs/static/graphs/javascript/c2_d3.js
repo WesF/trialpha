@@ -1,8 +1,9 @@
 $(function() {
-    createGraph();
+    createD3();
+    createHighCharts();
 });
 
-function createGraph() {
+function createD3() {
     var margin = {top: 20, right: 20, bottom: 50, left: 50},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -21,9 +22,9 @@ function createGraph() {
     
     // loop through the series json and apply valueline
     var i = 0
-    for (var key in c2_data) {
+    for (var key in d3_data) {
         i++
-        var objects = c2_data[key];
+        var objects = d3_data[key];
         // applies random colors to line stroke and label
         var color = "hsl(" + Math.random() * 360 + ",100%,50%)"
 
@@ -37,7 +38,6 @@ function createGraph() {
         .attr("d", valueline)
         .attr("stroke", color);
         
-         console.log(objects)
         canvas.append("text")
 		.attr("transform", "translate(" + (width - 30) + "," + (y(objects[5]['y']) - 30 * i)+ ")")
 		.attr("dy", ".35em")
@@ -72,4 +72,97 @@ function createGraph() {
 
 };
 
+
+function createHighCharts () {
+    // Get the CSV and create the chartonsole.log(c2_data)
+    console.log(highcharts_data)
+    Highcharts.chart('highcharts', {
+
+        title: {
+            text: 'Daily visits at www.highcharts.com'
+        },
+
+        subtitle: {
+            text: 'Source: Google Analytics'
+        },
+
+        xAxis: {
+            tickInterval: 7 * 24 * 3600 * 1000, // one week
+            tickWidth: 0,
+            gridLineWidth: 1,
+            labels: {
+                align: 'left',
+                x: 3,
+                y: -3
+            }
+        },
+
+        yAxis: [{ // left y axis
+            title: {
+                text: null
+            },
+            labels: {
+                align: 'left',
+                x: 3,
+                y: 16,
+                format: '{value:.,0f}'
+            },
+            showFirstLabel: false
+        }, { // right y axis
+            linkedTo: 0,
+            gridLineWidth: 0,
+            opposite: true,
+            title: {
+                text: null
+            },
+            labels: {
+                align: 'right',
+                x: -3,
+                y: 16,
+                format: '{value:.,0f}'
+            },
+            showFirstLabel: false
+        }],
+
+        legend: {
+            align: 'left',
+            verticalAlign: 'top',
+            y: 20,
+            floating: true,
+            borderWidth: 0
+        },
+
+        tooltip: {
+            shared: true,
+            crosshairs: true
+        },
+
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        click: function (e) {
+                            hs.htmlExpand(null, {
+                                pageOrigin: {
+                                    x: e.pageX || e.clientX,
+                                    y: e.pageY || e.clientY
+                                },
+                                headingText: this.series.name,
+                                maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+                                    this.y + ' visits',
+                                width: 200
+                            });
+                        }
+                    }
+                },
+                marker: {
+                    lineWidth: 1
+                }
+            }
+        },
+        series: highcharts_data
+    });
+
+}
 

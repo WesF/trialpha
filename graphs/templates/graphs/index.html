@@ -2,7 +2,8 @@
 {% load staticfiles %}
 {% block content %}
     <script type="text/javascript">
-        var c2_data = {{ data|safe }};
+        var d3_data = {{ d3_data|safe }}
+        var highcharts_data = {{ highcharts_data|safe }}
     </script>
     <div class="block d3" id="d3">
         <script src="{% static 'graphs/javascript/c2_d3.js' %}"></script>
