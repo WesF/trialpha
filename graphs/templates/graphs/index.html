@@ -9,11 +9,15 @@
         <script src="{% static 'graphs/javascript/c2_d3.js' %}"></script>
         <h1 style="text-align: center;">D3</h1>
     </div>
-    <div class="block highcharts" id="highcharts">
+    <div class="block">
         <h1>HighCharts</h1>
+        <div class="highcharts" id="highcharts">
+    </div>
     </div>
     <div class="block bokeh" id="bokeh">
         <h1>Bokeh</h1>
+        {{ div | safe }}
+        {{ script | safe }}
     </div>
 {% endblock %}
 

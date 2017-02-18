@@ -2,3 +2,13 @@
   fill: none;
   stroke-width: 4px;
 }
+
+.highcharts {
+  width: 900px; 
+  height: 600px;
+}
+
+.bokeh {
+  width: 900px; 
+  height: 600px;
+}

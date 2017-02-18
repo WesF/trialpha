@@ -6,6 +6,32 @@
     	<link href="{% static 'graphs/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
     	<link href="{% static 'graphs/css/style.css' %}" rel="stylesheet" media="screen">
     	<link href="{% static 'graphs/css/toolkit-startup.min.css' %}" rel="stylesheet" media="screen">
+    	<link href="{% static 'graphs/css/bokeh-0.12.4.min.css' %}" rel="stylesheet" media="screen">
+    <div class="p-y-m p-x" style="background-color: white; background-size: cover">
+	 	<nav class="navbar nav-bordered navbar-transparent m-b-0">
+	    	<div class="container-fluid">
+		      	<div class="navbar-header">
+		        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-com">
+		          		<span class="sr-only">Toggle navigation</span>
+		          		<span class="icon-bar"></span>
+		          		<span class="icon-bar"></span>
+		          		<span class="icon-bar"></span>
+		        	</button>
+		        	<a class="navbar-brand" href="#">
+		          		<h4 class="text-uppercase m-y-0">Home</h4>
+		        	</a>
+		      	</div>
+		      	<div class="navbar-collapse collapse" id="navbar-collapse-com">
+		        	<ul class="nav navbar-nav navbar-right">
+		          		<li><a href="#about"><i class="icon-info"></i></a></li>
+		          		<li><a href="#instagram"><i class="icon-social-instagram"></i></a></li>
+		          		<li><a href="#locate"><i class="icon-location"></i></a></li>
+		          		<li><a href="#contact"><i class="icon-paper-plane"></i></a></li>
+		        	</ul>
+		      	</div>
+	    	</div>
+	  	</nav>
+	</div>
   	</head>
 
   	<body>
@@ -13,6 +39,7 @@
   		<script type="text/javascript" src="{% static 'graphs/javascript/highcharts.js' %}"></script>
     	<script type="text/javascript" src="{% static 'graphs/javascript/bootstrap.min.js' %}"></script>
     	<script type="text/javascript" src="{% static 'graphs/javascript/d3.min.js' %}"></script>
+    	<script type="text/javascript" src="{% static 'graphs/javascript/bokeh-0.12.4.min.js' %}"></script>
     	{% block content %}
     	{% endblock %}
 		

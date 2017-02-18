@@ -5,8 +5,8 @@ $(function() {
 
 function createD3() {
     var margin = {top: 20, right: 20, bottom: 50, left: 50},
-        width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        width = 970 - margin.left - margin.right,
+        height = 670 - margin.top - margin.bottom;
     var x = d3.scaleLinear().range([0, width]);
     var y = d3.scaleLinear().range([height, 0]);
     var valueline = d3.line()
@@ -75,15 +75,10 @@ function createD3() {
 
 function createHighCharts () {
     // Get the CSV and create the chartonsole.log(c2_data)
-    console.log(highcharts_data)
     Highcharts.chart('highcharts', {
 
         title: {
-            text: 'Daily visits at www.highcharts.com'
-        },
-
-        subtitle: {
-            text: 'Source: Google Analytics'
+            text: ''
         },
 
         xAxis: {
@@ -165,4 +160,3 @@ function createHighCharts () {
     });
 
 }
-
