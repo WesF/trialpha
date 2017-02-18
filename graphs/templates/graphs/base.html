@@ -1,33 +1,24 @@
 {% load staticfiles %}
 <html>
 	<head>
-    	<img style="display: block; margin: auto; width: 60%;"
-    		src="{% static "graphs/images/trialpha_banner.png" %}" alt="banner"/>
     	<link href="{% static 'graphs/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
     	<link href="{% static 'graphs/css/style.css' %}" rel="stylesheet" media="screen">
-    	<link href="{% static 'graphs/css/toolkit-startup.min.css' %}" rel="stylesheet" media="screen">
+    	<link href="{% static 'graphs/css/toolkit-minimal.min.css' %}" rel="stylesheet" media="screen">
     	<link href="{% static 'graphs/css/bokeh-0.12.4.min.css' %}" rel="stylesheet" media="screen">
-    <div class="p-y-m p-x" style="background-color: white; background-size: cover">
-	 	<nav class="navbar nav-bordered navbar-transparent m-b-0">
+    <div class="p-y-m p-x" style="background-size: cover">
+	 	<nav style="background-color: white;" class="navbar navbar-light nav-bordered navbar-fixed-top m-b-0">
 	    	<div class="container-fluid">
-		      	<div class="navbar-header">
-		        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-com">
-		          		<span class="sr-only">Toggle navigation</span>
-		          		<span class="icon-bar"></span>
-		          		<span class="icon-bar"></span>
-		          		<span class="icon-bar"></span>
-		        	</button>
+		      	<div class="navbar-header pull-left">
 		        	<a class="spin" href="#">
 		          		<img style="display: block; margin: auto; width: 60%;"
     						src="{% static "graphs/images/trialpha_logo.png" %}" alt="banner"/>
 		        	</a>
 		      	</div>
-		      	<div class="navbar-collapse collapse" id="navbar-collapse-com">
+		      	<div class="navbar pull-right" id="navbar-collapse-com">
 		        	<ul class="nav navbar-nav navbar-right">
-		          		<li><a href="#about"><i class="icon-info"></i></a></li>
-		          		<li><a href="#instagram"><i class="icon-social-instagram"></i></a></li>
-		          		<li><a href="#locate"><i class="icon-location"></i></a></li>
-		          		<li><a href="#contact"><i class="icon-paper-plane"></i></a></li>
+		          		<li><a class = "black" href="#d3">D3</a></li>
+		          		<li><a class = "black" href="#highcharts">HichCharts</i></a></li>
+		          		<li><a class = "black" href="#bokeh">Bokeh</a></li>
 		        	</ul>
 		      	</div>
 	    	</div>
