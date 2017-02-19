@@ -1,0 +1,25 @@
+{% extends "graphs/base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <script type="text/javascript">
+        var d3_data = {{ d3_data|safe }}
+        var highcharts_data = {{ highcharts_data|safe }}
+    </script>
+    <div class="block block-fill-width text-center d3" id="d3">
+        <h1 class="block-title">D3</h1>
+    </div>
+    <div class="block block-fill-width text-center center" id="highchart">
+        <h1 class="block-title">HighCharts</h1>
+        <div class="highcharts center" id="highcharts"></div>
+    </div>
+    </div>
+    <div class="block block-fill-width text-center center bokeh" id="bokeh">
+        <div class='centered'>
+            <h1 class="block-title center">Bokeh</h1>
+            {{ div | safe }}
+            {{ script | safe }}
+        </div>
+    </div>
+    <script src="{% static 'graphs/javascript/c2_d3.js' %}"></script>
+{% endblock %}
+

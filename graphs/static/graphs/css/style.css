@@ -1,0 +1,82 @@
+.line {
+  fill: none;
+  stroke-width: 4px;
+}
+
+.highcharts {
+  width: 900px; 
+}
+
+.bokeh {
+  width: 900px; 
+}
+
+.spin{
+   -webkit-transform-origin: 50% 58%;
+   transform-origin:50% 58%;
+   -ms-transform-origin:50% 58%; /* IE 9 */
+   -webkit-animation: spin .2s infinite linear;
+   -moz-animation: spin .2s infinite linear;
+   -o-animation: spin .2s infinite linear;
+   animation: spin .2s infinite linear;
+}
+
+img {
+  padding:10;
+ -webkit-transition: all 0.5s ease 0s;
+ -moz-transition: all 0.5s ease 0s;
+ -o-transition: all 0.5s ease 0s;
+ -ms-transition: all 0.5s ease 0s;
+ transition: all 0.5s ease 0s;
+ cursor:pointer;
+}
+
+img:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.black {
+  padding-top: 100px;
+  line-height: 100%;
+  color: #000000;
+  font-size: 40;
+  font-weight: 100;
+}
+
+.navbar-nav li a {
+ line-height: 67.33px !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav li a {
+    line-height: 10px !important;
+    font-size: 20;
+  }
+}
+
+.navbar-light {
+  height: 96 !important;
+}
+
+.container-fluid {
+  height: 96 !important;
+}
+
+.bk-plot-wrapper table {
+    margin: 0 auto;
+}
+
+.centered {
+    width: 900;
+    margin: 0 auto; 
+}
