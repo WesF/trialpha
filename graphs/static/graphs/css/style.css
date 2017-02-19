@@ -52,3 +52,13 @@ img:hover {
   font-size: 40;
   font-weight: 100;
 }
+
+.navbar-nav li a {
+ line-height: 67.33px !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav li a {
+    line-height: 22px !important;
+  }
+}
