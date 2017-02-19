@@ -71,3 +71,12 @@ img:hover {
 .container-fluid {
   height: 96 !important;
 }
+
+.bk-plot-wrapper table {
+    margin: 0 auto;
+}
+
+.centered {
+    width: 900;
+    margin: 0 auto; 
+}

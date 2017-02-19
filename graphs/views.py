@@ -8,6 +8,7 @@ from bokeh.embed import components
 from bokeh.palettes import viridis
 from bokeh.plotting import figure, output_file, show
 from .models import C2
+from bokeh.layouts import row
 
 def index(request):
     #TODO: process C2 data into some better data structure depending on
