@@ -58,10 +58,6 @@ def bokeh(d3_data):
     
     script, div = components(plot)
     return script, div
-    
-def data(request):
-    data = C2.objects.all()
-    json_data = [ob.as_json() for ob in data]
-    return json_data
+
 
     
