@@ -64,6 +64,4 @@ def data(request):
     json_data = [ob.as_json() for ob in data]
     return json_data
 
-class C2ListView(ListView):
-    model = C2
     
